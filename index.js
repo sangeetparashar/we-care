@@ -8,3 +8,26 @@ app.get('/', function(req, res) {
 });
 
 app.listen(8080);
+
+// GET method route
+app.get('/login', function (req, res) {
+    res.send('GET request for the login page');
+  });
+
+app.get('/fooddonor', function (req,res) {
+    res.send('GET request for the food donor page');
+});
+
+app.get('/postfood', function (req,res) {
+    res.send('GET request for the post food page');
+});
+
+app.get('/organization', function (req,res) {
+    res.send('GET request for the charitable organization page');
+});
+
+app.get('/claimedfood', function (req,res) {
+    res.send('GET request for the claimed food page');
+});
+
+  
