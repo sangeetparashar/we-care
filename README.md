@@ -1,4 +1,4 @@
-# We-are because no one should go to sleep hungry
+# We-care because no one should go to sleep hungry
 
           Current Stack: NodeJS, Express, MustacheJS and basic HTML, CSS5, Bootstrap
 
