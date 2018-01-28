@@ -52,134 +52,24 @@
       </h1>
 
       <div class="row">
+        <% foodPosts.forEach(function(foodPost) { %>
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">{{title}}</a>
+                <a href="#"><%= foodPost.title %></a>
               </h4>
-              <p class="card-text">{{Poster}}</p>
-              <p class="card-text">{{Distance}}</p>
-              <p class="card-text">{{Expirty Date}}</p>
-              <p class="card-text">{{Restriction}}</p>
-
-             
+              <p class="card-text"><%= foodPost.poster %></p>
+              <p class="card-text"><%= foodPost.distance %></p>
+              <p class="card-text"><%= foodPost.expiry_date %></p>
+              <p class="card-text"><%= foodPost.restriction %></p>
+        
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">{{title}}</a>
-              </h4>
-              <p class="card-text">{{Poster}}</p>
-              <p class="card-text">{{Distance}}</p>
-              <p class="card-text">{{Expirty Date}}</p>
-              <p class="card-text">{{Restriction}}</p>
+        <% }); %>
 
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">{{title}}</a>
-              </h4>
-              <p class="card-text">{{Poster}}</p>
-              <p class="card-text">{{Distance}}</p>
-              <p class="card-text">{{Expirty Date}}</p>
-              <p class="card-text">{{Restriction}}</p>
-
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">{{title}}</a>
-              </h4>
-              <p class="card-text">{{Poster}}</p>
-              <p class="card-text">{{Distance}}</p>
-              <p class="card-text">{{Expirty Date}}</p>
-              <p class="card-text">{{Restriction}}</p>
-
-              
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">{{title}}</a>
-              </h4>
-              <p class="card-text">{{Poster}}</p>
-              <p class="card-text">{{Distance}}</p>
-              <p class="card-text">{{Expirty Date}}</p>
-              <p class="card-text">{{Restriction}}</p>
-
-            
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">{{title}}</a>
-              </h4>
-              <p class="card-text">{{Poster}}</p>
-              <p class="card-text">{{Distance}}</p>
-              <p class="card-text">{{Expirty Date}}</p>
-              <p class="card-text">{{Restriction}}</p>
-
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">{{title}}</a>
-              </h4>
-              <p class="card-text">{{Poster}}</p>
-              <p class="card-text">{{Distance}}</p>
-              <p class="card-text">{{Expirty Date}}</p>
-              <p class="card-text">{{Restriction}}</p>
-
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">{{title}}</a>
-              </h4>
-              <p class="card-text">{{Poster}}</p>
-              <p class="card-text">{{Distance}}</p>
-              <p class="card-text">{{Expirty Date}}</p>
-              <p class="card-text">{{Restriction}}</p>
-
-             
-            </div>
-          </div>
-        </div>
       </div>
       <!-- /.row -->
     </div>

@@ -22,7 +22,7 @@ MongoClient.connect('mongodb://admin:admin@ds117888.mlab.com:17888/deltahacksdat
 
 // viewed at http://localhost:8080
 app.use(express.static(path.join(__dirname, '/public')));
-app.engine('html', engines.mustache);
+app.engine('html', engines.ejs);
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -44,12 +44,31 @@ app.get('/', function(req, res) {
     res.render('wow.html');        
 });
 
-
+var foodPosts = [
+  {
+    title: '10 cans',
+    poster: 'Loblaws',
+    distance: '0.7km',
+    expiry_date: '3wks',
+    restriction: 'contains nuts dummy'
+  }, 
+  {
+    title: '20 cans',
+    poster: 'No Frills',
+    distance: '1.7km',
+    expiry_date: '2wks',
+    restriction: 'contains nuts dummy'
+  }
+];
 
 // GET method route
 app.get('/organizations', function (req, res) {
-    res.render('organizations.html');
-  });
+    res.render('organizations.html', {foodPosts: foodPosts});
+});
+
+app.get('/contribute', function (req, res) {
+  res.render('contribute.html');
+});
 
 app.get('/fooddonor', function (req,res) {
     res.send('GET request for the food donor page');

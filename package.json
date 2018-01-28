@@ -13,6 +13,8 @@
     "async": "^2.6.0",
     "body-parser": "^1.18.2",
     "consolidate": "^0.15.0",
+    "ejs": "^2.5.7",
+    "ejs-lint": "^0.3.0",
     "express": "^4.16.2",
     "moment": "^2.20.1",
     "mongoose": "^5.0.1",
