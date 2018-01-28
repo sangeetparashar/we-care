@@ -44,6 +44,15 @@ MongoClient.connect('mongodb://admin:admin@ds117888.mlab.com:17888/deltahacksdat
             }
         )
     });
+    // GET method route
+    app.get('/shelters', function (req, res) {
+        db.collection('logins').find({timesinceposting: {$exists: true}}).toArray(
+            function(err, foodPosts) {
+                console.log(foodPosts);
+                res.render('shelters.html', {'foodPosts': foodPosts, 'Shelter': 'Angels'});
+            }
+        )
+    });
 
     // POST method route
     app.post('/add_foods', function(req, res, next) {
