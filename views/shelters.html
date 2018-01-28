@@ -15,15 +15,25 @@
 
     <!-- Custom styles for this template -->
     <link href="/public/css/4-col-portfolio.css" rel="stylesheet">
+      
+      <style>
+          a{
+              color:#ff665a;
+          }
+          
+          *{
+    transition: .3s ease;
+}
+      </style>
 
   </head>
 
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Welcome, <%= Shelter %></a>
+        <a class="navbar-brand" href="#"><img class="img-responsive" src="img/leftovr_logo.png" style="max-height:1.5em;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,7 +59,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
           <form action="/claim_food" method="POST">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <a href="#"><img class="card-img-top" src="https://propfood.org/wp-content/uploads/2015/02/Prop-food-02.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#"><%= foodPost.title %></a>
@@ -61,8 +71,9 @@
               <input type="password" style="display:none" name="_id" value="<%= foodPost._id %>">
               <p><%= foodPost.claimed%></p>
               <% if (foodPost.claimed == false) {%>
-              <button type="submit" class="btn btn-primary">Claim</button>
+              <button type="submit" class="btn btn-primary" style="background:#ff665a">Claim</button>
               <% } %>
+
             </div>
           </div>
           </form>
@@ -75,9 +86,9 @@
     <!-- /.container -->
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5" style="background:#ff665a">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white small" style="opacity:0.5">Copyright &copy; LEFTOVR CO.</p>
       </div>
       <!-- /.container -->
     </footer>
