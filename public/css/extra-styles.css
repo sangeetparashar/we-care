@@ -1,0 +1,17 @@
+.grow {
+	-moz-transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+	-moz-transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+
+.shadow {
+	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
