@@ -86,4 +86,22 @@ app.get('/claimedfood', function (req,res) {
     res.send('GET request for the claimed food page');
 });
 
-  
+// POST method route
+    app.post('/submit', function(req, res, next) {
+        var title = req.body.title;
+        var poster = req.body.organization;
+        var expirytime = req.body.expiry;
+        var timesinceposting = req.body.time;
+        
+       if ((title == '') || (poster == '') || (expirytime == '') || (timesinceposting == '')) {
+            next('Please provide an entry for all fields.');
+        } else {
+            db.collection('logins').insertOne(
+                { 'title': title, 'poster': poster, 'expirytime': expirytime, 'timesinceposting': timesinceposting },
+                function (err, r) {
+                    assert.equal(null, err);
+                    res.send("Successfully Posted foods.");
+                }
+            );
+        }
+    });
