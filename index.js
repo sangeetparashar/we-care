@@ -37,18 +37,16 @@ MongoClient.connect('mongodb://admin:admin@ds117888.mlab.com:17888/deltahacksdat
 
     // GET method route
     app.get('/organizations', function (req, res) {
-        db.collection('logins').find({timesinceposting: {$exists: true}}).toArray(
+        db.collection('logins').find({claimed: {$exists: true}}).toArray(
             function(err, foodPosts) {
-                console.log(foodPosts);
                 res.render('organizations.html', {'foodPosts': foodPosts});
             }
         )
     });
     // GET method route
     app.get('/shelters', function (req, res) {
-        db.collection('logins').find({timesinceposting: {$exists: true}}).toArray(
+        db.collection('logins').find({claimed: {$exists: true}}).toArray(
             function(err, foodPosts) {
-                console.log(foodPosts);
                 res.render('shelters.html', {'foodPosts': foodPosts, 'Shelter': 'Angels'});
             }
         )
@@ -65,13 +63,34 @@ MongoClient.connect('mongodb://admin:admin@ds117888.mlab.com:17888/deltahacksdat
             next('Please provide an entry for all fields.');
         } else {
             db.collection('logins').insertOne(
-                { 'title': title, 'poster': poster, 'expirytime': expirytime, 'timesinceposting': timesinceposting },
+                { 'title': title, 'poster': poster, 'expirytime': expirytime, 'timesinceposting': timesinceposting, claimed: false },
                 function (err, r) {
                     assert.equal(null, err);
-                    res.send("Successfully Posted foods.");
+                    db.collection('logins').find({claimed: {$exists: true}}).toArray(
+                        function(err, foodPosts) {
+                            res.render('organizations.html', {'foodPosts': foodPosts});
+                        }
+                    )
                 }
             );
         }
+    });
+
+    // claim button function
+    app.post('/claim_food', function(req, res, next) {
+        var id = req.body._id;
+        console.log(id);
+            db.collection('logins').updateOne(
+                {"_id": id},{$set: { "claimed": true }},
+                function (err, r) {
+                    assert.equal(null, err);
+                    db.collection('logins').find({claimed: {$exists: true}}).toArray(
+                        function(err, foodPosts) {
+                            res.render('shelters.html', {'foodPosts': foodPosts, 'Shelter': 'Angels'});
+                        }
+                    )
+                }
+            );
     });
 
     app.use(errorHandler);

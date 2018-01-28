@@ -45,7 +45,9 @@
 
 <div class="row">
   <% foodPosts.forEach(function(foodPost) { %>
+      
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+          <form action="/claim_food" method="POST">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
@@ -54,13 +56,18 @@
               </h4>
               <p class="card-text"><%= foodPost.poster %></p>
               <p class="card-text"><%= foodPost.distance %></p>
-              <p class="card-text"><%= foodPost.expiry_date %></p>
-              <p class="card-text"><%= foodPost.restriction %></p>
-
-              <button type="button" class="btn btn-primary">Claim</button>
+              <p class="card-text"><%= foodPost.expirytime %></p>
+              <p class="card-text"><%= foodPost.timesinceposting %></p>
+              <input type="password" style="display:none" name="_id" value="<%= foodPost._id %>">
+              <p><%= foodPost.claimed%></p>
+              <% if (foodPost.claimed == false) {%>
+              <button type="submit" class="btn btn-primary">Claim</button>
+              <% } %>
             </div>
           </div>
+          </form>
         </div>
+        
         <% }); %>
       </div>
       <!-- /.row -->
