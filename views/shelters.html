@@ -69,7 +69,6 @@
               <p class="card-text"><%= foodPost.expirytime %></p>
               <p class="card-text"><%= foodPost.timesinceposting %></p>
               <input type="password" style="display:none" name="_id" value="<%= foodPost._id %>">
-              <p><%= foodPost.claimed%></p>
               <% if (foodPost.claimed == false) {%>
               <button type="submit" class="btn btn-primary" style="background:#ff665a">Claim</button>
               <% } %>
