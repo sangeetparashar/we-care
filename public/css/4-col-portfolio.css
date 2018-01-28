@@ -40,5 +40,5 @@ a{
 }
 
 .btn-primary{
-    background-color:#ff665a;
+    background-color:#ff665a; !important
 }
