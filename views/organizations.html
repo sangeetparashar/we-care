@@ -16,10 +16,6 @@
     <!-- Custom styles for this template -->
     <link href="/css/4-col-portfolio.css" rel="stylesheet">
 
-    <!--Bootstrap Toggle -->
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
   </head>
 
   <body>
@@ -51,7 +47,7 @@
     <div class="container">
 
       <!-- Page Heading -->
-      <h1 class="my-4">Postings
+      <h1 class="my-4" >Postings
         <small>See what other organizations such as you posted</small>
       </h1>
 
@@ -68,16 +64,7 @@
               <p class="card-text">{{Expirty Date}}</p>
               <p class="card-text">{{Restriction}}</p>
 
-              <input type="checkbox" data-toggle="toggle" data-on="Enabled" data-off="Disabled">
-              <input type="checkbox" id="toggle-two">
-              <script>
-                $(function() {
-                  $('#toggle-two').bootstrapToggle({
-                   on: 'Enabled',
-                    off: 'Disabled'
-                  });
-                })
-              </script>
+             
             </div>
           </div>
         </div>
@@ -86,9 +73,14 @@
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project Two</a>
+                <a href="#">{{title}}</a>
               </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+              <p class="card-text">{{Poster}}</p>
+              <p class="card-text">{{Distance}}</p>
+              <p class="card-text">{{Expirty Date}}</p>
+              <p class="card-text">{{Restriction}}</p>
+
+             
             </div>
           </div>
         </div>
@@ -97,9 +89,14 @@
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project Three</a>
+                <a href="#">{{title}}</a>
               </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
+              <p class="card-text">{{Poster}}</p>
+              <p class="card-text">{{Distance}}</p>
+              <p class="card-text">{{Expirty Date}}</p>
+              <p class="card-text">{{Restriction}}</p>
+
+             
             </div>
           </div>
         </div>
@@ -108,9 +105,14 @@
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project Four</a>
+                <a href="#">{{title}}</a>
               </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+              <p class="card-text">{{Poster}}</p>
+              <p class="card-text">{{Distance}}</p>
+              <p class="card-text">{{Expirty Date}}</p>
+              <p class="card-text">{{Restriction}}</p>
+
+              
             </div>
           </div>
         </div>
@@ -119,9 +121,14 @@
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project Five</a>
+                <a href="#">{{title}}</a>
               </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+              <p class="card-text">{{Poster}}</p>
+              <p class="card-text">{{Distance}}</p>
+              <p class="card-text">{{Expirty Date}}</p>
+              <p class="card-text">{{Restriction}}</p>
+
+            
             </div>
           </div>
         </div>
@@ -130,9 +137,14 @@
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project Six</a>
+                <a href="#">{{title}}</a>
               </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+              <p class="card-text">{{Poster}}</p>
+              <p class="card-text">{{Distance}}</p>
+              <p class="card-text">{{Expirty Date}}</p>
+              <p class="card-text">{{Restriction}}</p>
+
+             
             </div>
           </div>
         </div>
@@ -141,9 +153,14 @@
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project Seven</a>
+                <a href="#">{{title}}</a>
               </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+              <p class="card-text">{{Poster}}</p>
+              <p class="card-text">{{Distance}}</p>
+              <p class="card-text">{{Expirty Date}}</p>
+              <p class="card-text">{{Restriction}}</p>
+
+             
             </div>
           </div>
         </div>
@@ -152,40 +169,19 @@
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project Eight</a>
+                <a href="#">{{title}}</a>
               </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius adipisci dicta dignissimos neque animi ea, veritatis, provident hic consequatur ut esse! Commodi ea consequatur accusantium, beatae qui deserunt tenetur ipsa.</p>
+              <p class="card-text">{{Poster}}</p>
+              <p class="card-text">{{Distance}}</p>
+              <p class="card-text">{{Expirty Date}}</p>
+              <p class="card-text">{{Restriction}}</p>
+
+             
             </div>
           </div>
         </div>
       </div>
       <!-- /.row -->
-
-      <!-- Pagination -->
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
-
     </div>
     <!-- /.container -->
 
