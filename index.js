@@ -93,8 +93,9 @@ MongoClient.connect('mongodb://admin:admin@ds117888.mlab.com:17888/deltahacksdat
     });
 
     app.use(errorHandler);
+const PORT = process.env.PORT || 5000
 
-  app.listen(8080, () => {
+  app.listen(PORT, () => {
     console.log( 'listening on localhost:8080');
     });
 });
