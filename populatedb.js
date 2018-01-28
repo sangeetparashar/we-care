@@ -13,6 +13,8 @@ var async = require('async')
 var Book = require('./models/book')
 var Author = require('./models/author')
 var Genre = require('./models/genre')
+var Login = require('./models/login')
+var Food = require('./models/food')
 var BookInstance = require('./models/bookinstance')
 
 
@@ -29,7 +31,42 @@ var authors = []
 var genres = []
 var books = []
 var bookinstances = []
+var logininstances = []
+var foods = []
+var logins = []
 
+function foodCreate(title, poster, time, expiry, image){
+  foodDetail = {title:title, poster:poster, time:time, expiry:expiry, image:image}
+  
+  var food = new Food(foodDetail);
+
+  food.save(function(err){
+    if(err){
+      cb(err, null)
+      return
+    }
+    console.log('New Food: '+food);
+    foods.push(food)
+    cb(null, author)
+  });
+}
+
+function loginCreate(name, location, identity, ratings){
+  loginDetails = {name:name, location:location, identity:identity, ratings:ratings}
+
+  var login = new Login(loginDetails);
+
+  login.save(function(err){
+    if(err){
+      cb(err, null)
+      return
+    }
+    console.log('New Login: '+login);
+    logins.push(login)
+    cb(null, login)
+  });
+
+}
 function authorCreate(first_name, family_name, d_birth, d_death, cb) {
   authordetail = {first_name:first_name , family_name: family_name }
   if (d_birth != false) authordetail.date_of_birth = d_birth
@@ -83,7 +120,47 @@ function bookCreate(title, summary, isbn, author, genre, cb) {
   }  );
 }
 
+function foodInstanceCreate(title, poster, time, expiry, image){
+  foodinstancedetail = {
+    title: title, 
+    poster: poster, 
+    time: time,
+    expiry: expiry,
+    image: image
+  }
 
+  var foodinstance = new foodInstanceCreate(foodinstancedetail);
+  foodinstance.save(function(err){
+    if (err) {
+      console.log('ERROR CREATING fookInstance: ' + foodinstance);
+      cb(err, null)
+      return
+    }
+    console.log('New FoodInstance: ' + foodinstance);
+    foodinstances.push(foodinstance)
+    cb(null, food)
+  });
+}
+
+function loginInstanceCreate(name, location, identity, ratings){
+  logininstancedetail = {
+    name:name,
+    location:location,
+    identity:identity,
+    ratings:ratings
+  }
+  var logininstance = new loginInstanceCreate(logininstancedetail);
+  logininstance.save(function(err){
+    if (err) {
+      console.log('ERROR CREATING loginInstance: ' + logininstance);
+      cb(err, null)
+      return
+    }
+    console.log('New loginInstance: ' + logininstance);
+    logininstances.push(logininstance)
+    cb(null, login)
+  });
+}
 function bookInstanceCreate(book, imprint, due_back, status, cb) {
   bookinstancedetail = { 
     book: book,
@@ -166,7 +243,86 @@ function createBooks(cb) {
         cb);
 }
 
-
+function createloginInstances(cb){
+  //name, location, identity, ratings
+      async.parallel([
+        function(callback) {
+          bookInstanceCreate(logins[0], 'Jason.', 'Lee', 'organization', '5')
+        },
+        function(callback) {
+          bookInstanceCreate(logins[1], ' Gollancz, 2011.', false, 'Loaned', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[2], ' Gollancz, 2015.', false, false, callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[3], 'New York Tom Doherty Associates, 2016.', false, 'Available', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[3], 'New York Tom Doherty Associates, 2016.', false, 'Available', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[3], 'New York Tom Doherty Associates, 2016.', false, 'Available', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[4], 'New York, NY Tom Doherty Associates, LLC, 2015.', false, 'Available', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[4], 'New York, NY Tom Doherty Associates, LLC, 2015.', false, 'Maintenance', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[4], 'New York, NY Tom Doherty Associates, LLC, 2015.', false, 'Loaned', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[0], 'Imprint XXX2', false, false, callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[1], 'Imprint XXX3', false, false, callback)
+        }
+        ],
+        // optional callback
+        cb);
+}
+function createFoodInstances(cb){
+  //name, location, identity, ratings
+      async.parallel([
+        function(callback) {
+          bookInstanceCreate(logins[0], 'Jason.', 'Lee', 'organization', '5')
+        },
+        function(callback) {
+          bookInstanceCreate(logins[1], ' Gollancz, 2011.', false, 'Loaned', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[2], ' Gollancz, 2015.', false, false, callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[3], 'New York Tom Doherty Associates, 2016.', false, 'Available', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[3], 'New York Tom Doherty Associates, 2016.', false, 'Available', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[3], 'New York Tom Doherty Associates, 2016.', false, 'Available', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[4], 'New York, NY Tom Doherty Associates, LLC, 2015.', false, 'Available', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[4], 'New York, NY Tom Doherty Associates, LLC, 2015.', false, 'Maintenance', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[4], 'New York, NY Tom Doherty Associates, LLC, 2015.', false, 'Loaned', callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[0], 'Imprint XXX2', false, false, callback)
+        },
+        function(callback) {
+          bookInstanceCreate(logins[1], 'Imprint XXX3', false, false, callback)
+        }
+        ],
+        // optional callback
+        cb);
+}
 function createBookInstances(cb) {
     async.parallel([
         function(callback) {
@@ -212,7 +368,10 @@ function createBookInstances(cb) {
 async.series([
     createGenreAuthors,
     createBooks,
-    createBookInstances
+    createBookInstances,
+    createloginInstances,
+    createFoodInstances
+
 ],
 // optional callback
 function(err, results) {
