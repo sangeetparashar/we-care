@@ -3,18 +3,20 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-4-col-portfolio/blob/master/LICENSE)
  */
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 body {
   padding-top: 54px;
-  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/Produce-Section-Grocery.jpg");
+  background: #FFFFFF;
 }
 @media (min-width: 992px) {
   body {
     padding-top: 56px;
+      font-family: 'Roboto';
   }
 }
 h1{
-	color:white;
+	color:black;
 }
 .portfolio-item {
   margin-bottom: 30px;
@@ -22,4 +24,21 @@ h1{
 
 .pagination {
   margin-bottom: 30px;
+}
+
+navbar{
+  background: #FFFFFF;  
+    font-family: 'Raleway';!important
+}
+
+footer{
+    background:#ff665a;
+}
+
+a{
+    color:#ff665a;
+}
+
+.btn-primary{
+    background-color:#ff665a;
 }

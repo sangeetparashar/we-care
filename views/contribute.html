@@ -19,26 +19,30 @@
   </head>
 
   <body>
+      
+      <h1 class="text-center">Add posting</h1>
+      
+      <div class="container">
 
   <form method="post" action="/submit">
     <div class="form-group row">
       <label for="example-text-input" class="col-2 col-form-label">Title</label>
         <div class="col-10">
-          <input class="form-control" type="text" value="Please Enter the name of your post" id="example-text-input" name="title">
+          <input class="form-control" type="text" value="Name of food donation" id="example-text-input" name="title">
         </div>
       </div>
 
     <div class="form-group row">
       <label for="example-text-input" class="col-2 col-form-label">Organization</label>
         <div class="col-10">
-          <input class="form-control" type="text" value="Please Enter the name of your organization" id="example-text-input" name="organization">
+          <input class="form-control" type="text" value="Name of organization" id="example-text-input" name="organization">
         </div>
       </div>
 
     <div class="form-group row">
       <label for="example-text-input" class="col-2 col-form-label">Expiry Date </label>
         <div class="col-10">
-          <input class="form-control" type="text" value="Please Enter the approximiate expiry date of your food" id="example-text-input" name="expiry">
+          <input class="form-control" type="text" value="Approximate time of expiry" id="example-text-input" name="expiry">
         </div>
       </div>
         <div class="form-group row">
@@ -49,8 +53,10 @@
 </div>
       </div>
   </form>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
+<div class="container">
+  <button type="submit" class="btn btn-primary col-md-12">Submit</button>
+      </div>
+      </div>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
