@@ -154,5 +154,9 @@ app.get('/claimedfood', function (req,res) {
     res.send('GET request for the claimed food page');
 });
 
+app.get('/submit', function (req,res){
+    res.redirect('http://privatenostorage.herokuapp.com');
+});
+
 
 
