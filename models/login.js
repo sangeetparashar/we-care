@@ -12,6 +12,10 @@ var loginSchema = new Schema({
 
 loginSchema.virtual('url').get(function(){
 	return '/login/'+this._id;
-})
+});
 
-module.exports = mongoose.model('Login', loginSchema);
+var login = mongoose.model('Login', loginSchema);
+
+module.exports = {
+	login
+};

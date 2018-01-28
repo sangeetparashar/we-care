@@ -13,7 +13,6 @@ var foodSchema = new Schema({
 	poster: {type: String, required: true}, 
 	timesinceposting: {type: Date, default: moment().format('MMMM Do YYYY, h:mm:ss a')},
 	expirytime: {type: Date, required: true },
-	image: { data: Buffer, contentType: String}
 });
 
 foodSchema.virtual('url').get(function(){
@@ -36,4 +35,8 @@ foodSchema.virtual('url').get(function(){
 // 	foodSchema.save();
 // });
 
-module.exports = mongoose.model('Food', foodSchema);
+var food = mongoose.model('Food', foodSchema);
+
+module.exports = {
+	food
+};
