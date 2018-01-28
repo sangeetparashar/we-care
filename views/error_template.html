@@ -23,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Welcome, <%= Shelter %></a>
+        <a class="navbar-brand" href="#">Welcome, Organization</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,28 +41,15 @@
 
     <!-- Page Content -->
     <div class="container">
-      <br><br><br>
+
+      <!-- Page Heading -->
+      <h1 class="my-4">Postings
+        <small>Sorry, there was an error</small>
+      </h1>
 
 <div class="row">
-  <% foodPosts.forEach(function(foodPost) { %>
-        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#"><%= foodPost.title %></a>
-              </h4>
-              <p class="card-text"><%= foodPost.poster %></p>
-              <p class="card-text"><%= foodPost.distance %></p>
-              <p class="card-text"><%= foodPost.expiry_date %></p>
-              <p class="card-text"><%= foodPost.restriction %></p>
-
-              <button type="button" class="btn btn-primary">Claim</button>
-            </div>
-          </div>
-        </div>
-        <% }); %>
-      </div>
+        <div class="col-12 portfolio-item"><%= error %></div>
+</div>
       <!-- /.row -->
     </div>
     <!-- /.container -->
